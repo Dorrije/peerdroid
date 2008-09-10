@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout 
+	android:id="@+id/widget47"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<ImageView android:id="@+id/introImg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_x="0px"
+		android:layout_y="10px"
+		android:src="@drawable/intro">
+	</ImageView>
+	
+	<TextView android:id="@+id/introTextView"
+		android:layout_width="wrap_content"
+		android:layout_height="50px" android:text="Loading ..."
+		android:layout_x="107px" android:layout_y="175px">
+	</TextView>
+	
+	<ProgressBar android:id="@+id/introProgressBar"
+		android:layout_width="28px"
+		android:layout_height="28px" 
+		android:layout_x="189px"
+		android:layout_y="170px">
+	</ProgressBar>
+
+</AbsoluteLayout>

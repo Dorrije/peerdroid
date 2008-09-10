@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout android:id="@+id/widget0"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<SurfaceView android:id="@+id/videoView"
+		android:layout_width="320px" 
+		android:layout_height="300px"
+		android:text="VideoView" 
+		android:layout_x="0px"
+		android:layout_y="0px">
+	</SurfaceView>
+
+	<ImageButton android:id="@+id/rewButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:layout_x="35px"
+		android:layout_y="340px" 
+		android:background="@drawable/rew">
+	</ImageButton>
+
+	<ImageButton android:id="@+id/playButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:background="@drawable/play"
+		android:layout_x="75px"
+		android:layout_y="340px">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/pauseButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:layout_x="115px"
+		android:layout_y="340px" 
+		android:background="@drawable/pause">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/stopButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:layout_x="155px"
+		android:layout_y="340px" 
+		android:background="@drawable/stop">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/fwdButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:layout_x="195px"
+		android:layout_y="340px" 
+		android:background="@drawable/fwd">
+	</ImageButton>
+	
+	<ImageButton android:id="@+id/ejectButton"
+		android:layout_width="30px"
+		android:layout_height="30px" 
+		android:layout_x="235px"
+		android:layout_y="340px" 
+		android:background="@drawable/eject">
+	</ImageButton>
+	
+	<TextView android:id="@+id/secTextView" android:typeface="sans"
+		android:textSize="10px"
+		android:textStyle="bold" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="TextView"
+		android:layout_x="16px" android:layout_y="400px">
+	</TextView>
+	
+	<TextView android:id="@+id/infoTextView" android:typeface="sans"
+		android:textSize="10px"
+		android:textStyle="bold" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="TextView"
+		android:layout_x="16px" android:layout_y="380px">
+	</TextView>
+	
+	<ProgressBar
+		android:id="@+id/progress_bar"
+		android:layout_width="281px" 
+		android:layout_height="wrap_content"
+		android:layout_x="16px" 
+		android:layout_y="310px"
+		style="?android:attr/progressBarStyleHorizontal" />
+
+</AbsoluteLayout>
