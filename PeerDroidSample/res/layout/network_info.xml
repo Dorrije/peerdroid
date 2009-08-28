@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/widget37"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView android:id="@+id/connType"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Connection Type : "
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true">
+	</TextView>
+	<TextView android:id="@+id/connTime"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Connection Time : "
+		android:layout_below="@+id/connType"
+		android:layout_alignParentLeft="true">
+	</TextView>
+	<TextView android:id="@+id/uploadSpeed"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Upload Speed : "
+		android:layout_below="@+id/connTime"
+		android:layout_alignParentLeft="true">
+	</TextView>
+	<TextView android:id="@+id/downSpeed"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Download Speed : "
+		android:layout_below="@+id/uploadSpeed"
+		android:layout_alignParentLeft="true">
+	</TextView>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+
+<AbsoluteLayout android:id="@+id/AbsoluteLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"></AbsoluteLayout>
+<FrameLayout android:id="@+id/FrameLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"></FrameLayout>
+
+<AbsoluteLayout android:id="@+id/AbsoluteLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content"></AbsoluteLayout>
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Write a Message:"></TextView>
+<EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/messageEditText"></EditText><Button android:layout_height="wrap_content" android:text="Send" android:id="@+id/sendButton" android:layout_width="fill_parent"></Button>
+
+<TextView android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/messagesTextView" android:singleLine="false"></TextView>
+</LinearLayout>
