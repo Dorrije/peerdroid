@@ -78,11 +78,11 @@ public class SocketService {
 		serverSocket = null;
 		try {
 			serverSocket = new JxtaServerSocket(netPeerGroup,
-					pipeAdv, 10);
+					pipeAdv, 100);
 			// Log.d(PeerDroidSample.TAG,SocketTAG + "Addr: " +
 			// serverSocket.getInetAddress() + " \n" +
 			// serverSocket.getLocalSocketAddress() );
-			// serverSocket.setSoTimeout(0);
+			//serverSocket.setSoTimeout(0);
 		} catch (IOException e) {
 			Log.d(PeerDroidSample.TAG, SocketTAG
 					+ "failed to create a server socket");
@@ -90,7 +90,7 @@ public class SocketService {
 			System.exit(-1);
 		}
 
-		while (this.jxtaService.isStopped()) {
+		while (!this.jxtaService.isStopped()) {
 			try {
 				Log.d(PeerDroidSample.TAG, SocketTAG
 						+ "Waiting for connections on PORT: "
