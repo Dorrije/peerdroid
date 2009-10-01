@@ -1,5 +1,5 @@
-#summary One-sentence summary of this page.
 #labels peerdroid,JXTA,Android,Tutorial
+#PeerDroid Tutorial to understand the architecture and run the rendezvous and sample applications.
 
 = Introduction =
 
