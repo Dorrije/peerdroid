@@ -44,3 +44,9 @@ http://160.78.28.131:9700
 Link to this file will be used in PeerDroid application and also in traditional JXTA solution to reach our RDV. (This is a tradition approach for JXTA solutions)
 
 = PeerDroid Sample Application =
+
+PeerDroid Sample Application is based on the porting of JXME for the Android's platform e provides a simple application to show the basic features. 
+He has some Class that try to simplify the configuration of a JXTA's node and the comunications called JXTAService and SocketService. In the next release of peerdroid, methods of these classes will be improved to provide a complete set of functionality for delevopers.
+
+
+
