@@ -7,6 +7,14 @@ Peer Droid is the porting of JXME protocol to Android Platform. It allows the An
 
 For some information about JXTA you can see to official programmers guide at: [https://jxta-guide.dev.java.net/ https://jxta-guide.dev.java.net/].
 
+JXTA Programmars Guide describes the following kind of peers:
+ * *Minimal-Edge peers:* Peers that implement only the required core JXTA services and may rely on other peers to act as their proxy for other services to fully participate in a JXTA Network. The proxy peers act as proxy for the non-core services. Typical minimal-edge peers include sensor devices and home automation devices,
+ * *Full-Edge Peer:* Peers that implements all of the core and standard JXTA services and can participate in all of the JXTA protocols. These peers form the majority of peers on a JXTA network and can include phones, PC's, servers, etc.
+ * *Super-Peer:* Peers that implement and provision resources to support the deployment and operation of a JXTA network. There are three key JXTA Super Peer functions. A single peer may implement one or more of these functions.
+ * *Relay:* Used to store and forward messages between peers that do not have direct connectivity because of firewalls or NAT. Only peers which are unable to receive connections from other peers require a relay.
+* *Rendezvous:* Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting.
+ * *Proxy:* Used by minimal-edge peers to get access to all the JXTA network functionalities. The proxy peer translates and summarizes requests, responds to queries and provides support functionality for minimal-edge peers.
+
 This tutorial shows how you can run a RDV and different nodes based on our porting with some traditional JXTA peers.
 
 Available Applications and Software are:
@@ -21,7 +29,4 @@ This tutorial as our project is in a early phase and it is in developing followi
 
 = RDV =
 
-JXTA Programmers Guide describes Rendezvous as follow: 
-"Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting."
-
-
+_"Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting." (From JXTA Guide)_
