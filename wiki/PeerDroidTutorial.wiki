@@ -57,6 +57,8 @@ Open peerdroid.sample.service.JXTAService and change the variable called _rdvlis
 
 The first method called after the initialization of variables is _"start()"_. In this method there are all configuration of JXTA peer like:
 
+NB: For the other configuration information you can see the JXTA Guide.
+
 *Peer Configuration*
 {{{
 config.setPeerID(IDFactory.newPeerID(PeerGroupID.defaultNetPeerGroupID));
@@ -101,3 +103,16 @@ while (!rendezvous.isConnectedToRendezVous()) {
 	}
 }
 }}}
+
+= JXTA-PeerDroidSample = 
+
+This is a sample application that you can use to create an heterogeneous network. JXTA-PeerDroidSample is based on standard JXTA library, but we are working to create the same level abstraction of PeerDroid in order to create in a easy way the JXTA features. For this reason you can find our service classes like JXTAService and SocketService.
+
+To start the application you must change the rdv list as we have done in the previous application. You have to go inside peerdroid.sample.service.JXTAService and change:
+
+{{{
+private static String rdvlist = "http://www.example.com/rdvlist.txt";
+}}}
+
+with the list of your rdv.
+
