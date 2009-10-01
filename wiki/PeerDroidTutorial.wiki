@@ -49,6 +49,6 @@ PeerDroid Sample Application is based on the porting of JXME for the Android's p
 He has some Class that try to simplify the configuration of a JXTA's node and the comunications called JXTAService and SocketService. In the next release of peerdroid, methods of these classes will be improved to provide a complete set of functionality for delevopers.
 
 PeerDroidSample can be retrieved from Download section or from SVN and can be imported using Eclipse and hid Android plugin.
+Open peerdroid.sample.service.JXTAService and change the variable called _rdvlist_ with the address of you RDV List defined above.
 
-
-
+<center>private static String rdvlist = "http://www.ce.unipr.it/~picone/rdvlist.txt";</center>
