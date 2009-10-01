@@ -12,7 +12,7 @@ JXTA Programmars Guide describes the following kind of peers:
  * *Full-Edge Peer:* Peers that implements all of the core and standard JXTA services and can participate in all of the JXTA protocols. These peers form the majority of peers on a JXTA network and can include phones, PC's, servers, etc.
  * *Super-Peer:* Peers that implement and provision resources to support the deployment and operation of a JXTA network. There are three key JXTA Super Peer functions. A single peer may implement one or more of these functions.
  * *Relay:* Used to store and forward messages between peers that do not have direct connectivity because of firewalls or NAT. Only peers which are unable to receive connections from other peers require a relay.
-* *Rendezvous:* Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting.
+ * *Rendezvous:* Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting.
  * *Proxy:* Used by minimal-edge peers to get access to all the JXTA network functionalities. The proxy peer translates and summarizes requests, responds to queries and provides support functionality for minimal-edge peers.
 
 This tutorial shows how you can run a RDV and different nodes based on our porting with some traditional JXTA peers.
