@@ -38,6 +38,5 @@ Peers that come into the network need to know the RDV's IP in order to contact h
 
 This is an example of "rdvlist.txt" where we are adding information about Ip and available ports:
 
-_tcp://160.78.28.131:9701_ <br>
-_http://160.78.28.131:9700_
-
+tcp://160.78.28.131:9701 <br>
+http://160.78.28.131:9700
