@@ -1,9 +1,11 @@
 #labels peerdroid,JXTA,Android,Tutorial
-#PeerDroid Tutorial to understand the architecture and run the rendezvous and sample applications.
+PeerDroid Tutorial to understand the architecture and run the rendezvous and sample applications.
 
 = Introduction =
 
-Add your content here.
+Peer Droid is the porting of JXME protocol to Android Platform. It allows the Android Developers to create application for Android platform that uses the features of JXTA system along with Android potential, interacting with other mobile terminals and other traditional peers (Personal-Computer).
+
+For some information about JXTA you can see to official programmers guide at: [https://jxta-guide.dev.java.net/ https://jxta-guide.dev.java.net/]
 
 
 = Details =
