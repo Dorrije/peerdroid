@@ -9,15 +9,15 @@ For some information about JXTA you can see to official programmers guide at: [h
 
 This tutorial shows how you can run a RDV and different nodes based on our porting with some traditional JXTA peers.
 
-Available Applications are:
-
-* peerdroid.jar
+Available Applications and Software are:
+ * peerdroid.jar
  * Peer Droid Sample Application with: 
   * Service classes to manage in a easy way JXTA Connection,Socket,ADV and peerList 
   * Simple GUI to show incoming messages, network's status and available peer list
  * JXTA Sample Application that you can run on traditional PCs with the same characteristics of the previous one but without the GUI.
  * A simple RDV that EDGE nodes can use to join a JXTA Network
 
+This tutorial as our project is in a early phase and it is in developing following our last updates. We are waiting your feedbacks to fix bugs and improve features and characteristics of PeerDroid. 
 
 = RDV =
 
