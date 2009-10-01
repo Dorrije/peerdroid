@@ -30,3 +30,18 @@ This tutorial as our project is in a early phase and it is in developing followi
 = RDV =
 
 _"Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting." (From JXTA Guide)_
+
+You can download RDV's codes from the Download Section or with the SVN Repository and import it with Eclipse or start it with the provided Ant script.
+The RDV must be executed on a computer inside the  LAN where you are testing the P2P application or if you want you can run it on a machine with a public IP in order to be reached from everyone. 
+
+Peers that come into the network need to know the RDV's IP in order to contact him and Join into the JXTA system. For this reason you must provide a simple txt file (called in our examples rdvlist.txt ) that contains information about one or more rendezvous.
+
+This is an example of "rdvlist.txt" where we are adding information about Ip and available ports:
+
+tcp://160.78.28.131:9701
+http://160.78.28.131:9700
+
+
+
+
+
