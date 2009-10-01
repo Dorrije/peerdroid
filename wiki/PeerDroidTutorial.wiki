@@ -42,3 +42,5 @@ tcp://160.78.28.131:9701 <br>
 http://160.78.28.131:9700
 
 Link to this file will be used in PeerDroid application and also in traditional JXTA solution to reach our RDV. (This is a tradition approach for JXTA solutions)
+
+= PeerDroid Sample Application =
