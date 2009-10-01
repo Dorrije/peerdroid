@@ -54,3 +54,26 @@ Open peerdroid.sample.service.JXTAService and change the variable called _rdvlis
 {{{
  private static String rdvlist = "http://www.example.come/rdvlist.txt";
 }}}
+
+The first method called after the initialization of variables is _"start()"_. In this method there are all configuration of JXTA peer like:
+
+*Peer Configuration*
+{{{
+config.setPeerID(IDFactory.newPeerID(PeerGroupID.defaultNetPeerGroupID));
+config.setName(instanceName);
+config.setDescription("Created by AndroidTester");
+config.setMode(NetworkConfigurator.EDGE_NODE);
+config.setPrincipal(principal);
+config.setPassword(password);
+config.setUseMulticast(false);
+try {
+      config.addRdvSeedingURI(new URI(rdvlist));
+} catch (java.net.URISyntaxException use) {
+     use.printStackTrace();
+}
+try {
+	config.save();
+	} catch (IOException io) {
+			io.printStackTrace();
+}
+}}}
