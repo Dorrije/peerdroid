@@ -21,7 +21,7 @@ This tutorial as our project is in a early phase and it is in developing followi
 
 = RDV =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+JXTA Programmers Guide describes Rendezvous as follow: 
+"Maintains global advertisement indexes and assists edge and proxied peers with advertisement searches. Also handles message broadcasting."
+
+
