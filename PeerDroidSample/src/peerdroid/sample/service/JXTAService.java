@@ -191,6 +191,8 @@ public class JXTAService implements DiscoveryListener {
 			
 			netPeerGroup = networkManager.startNetwork();
 
+			Log.d(PeerDroidSample.TAG, "NET PEER GROUP: " +  netPeerGroup.getPeerGroupID());
+			
 			rendezvous = netPeerGroup.getRendezVousService();
 			discovery = netPeerGroup.getDiscoveryService();
 
