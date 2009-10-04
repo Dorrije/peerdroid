@@ -78,10 +78,6 @@ import net.jxta.peergroup.PeerGroup;
 import net.jxta.peergroup.PeerGroupID;
 import net.jxta.protocol.ConfigParams;
 import net.jxta.protocol.TransportAdvertisement;
-
-
-import it.p2p.P2PStreaming;
-
 import javax.security.cert.CertificateException;
 
 import android.util.Log;
