@@ -174,7 +174,7 @@ public class JXTAService implements DiscoveryListener {
 				}
 			}
 
-			ConfigurationFactory.setRelayed(true);
+			//ConfigurationFactory.setRelayed(true);
 			ConfigurationFactory.setName(instanceName);
 			ConfigurationFactory.setTCPPortRange(9700, 9799);
 			//ConfigurationFactory.setTCPPortRange(9700, 9702);
