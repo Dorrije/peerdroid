@@ -55,9 +55,6 @@
  */
 
 package net.jxta.impl.config;
-
-import it.p2p.P2PStreaming;
-
 import java.io.File;
 
 import android.util.Log;
