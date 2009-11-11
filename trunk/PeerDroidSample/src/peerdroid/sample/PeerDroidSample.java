@@ -105,7 +105,7 @@ public class PeerDroidSample extends Activity {
 		
 		jxtaThread = new Thread() {
 			public void run() {
-					managerJXTA = new JXTAService("AndroidPeer-Sample" ,"principal","password",getFileStreamPath("jxta"));
+					managerJXTA = new JXTAService("MacBook-Piko" ,"principal","password",getFileStreamPath("jxta"));
 					managerJXTA.peerList = peerList;
 					managerJXTA.startSearchingPeers();
 					 
