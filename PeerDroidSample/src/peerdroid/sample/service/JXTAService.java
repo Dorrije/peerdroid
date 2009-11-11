@@ -135,6 +135,8 @@ public class JXTAService implements DiscoveryListener {
 			config = networkManager.getConfigurator();
 
 			config.setHome(instanceHome);
+			
+			/*
 			if (!config.exists()) {
 
 				config.setPeerID(IDFactory
@@ -175,7 +177,7 @@ public class JXTAService implements DiscoveryListener {
 					e.printStackTrace();
 				}
 			}
-
+*/
 			//ConfigurationFactory.setRelayed(true);
 			ConfigurationFactory.setName(instanceName);
 			ConfigurationFactory.setTCPPortRange(9700, 9799);
