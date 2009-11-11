@@ -56,7 +56,9 @@ public class JXTAService implements DiscoveryListener {
 	
 	private RendezVousService rendezvous;
 	private String instanceName = "NA";
-	private static String rdvlist = "http://www.ce.unipr.it/~picone/rdvlist.txt";
+	
+	//private static String rdvlist = "http://www.ce.unipr.it/~picone/rdvlist.txt";
+	private static String rdvlist = "http://dsg.ce.unipr.it/research/SP2A/rdvlist.txt";
 	
 	private PeerID socketPeerID;
 	private PeerID rdvId;

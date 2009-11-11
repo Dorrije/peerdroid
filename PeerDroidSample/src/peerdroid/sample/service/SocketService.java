@@ -232,12 +232,26 @@ public class SocketService {
 		PipeID id = (PipeID) IDFactory.newPipeID(netPeerGroup.getPeerGroupID());
 		PipeAdvertisement pipeAdv = (PipeAdvertisement) AdvertisementFactory
 				.newAdvertisement(PipeAdvertisement.getAdvertisementType());
-		pipeAdv.setPipeID(id);
+		
+		//Start Ling Edit
+		
+		PipeID socketID = null;
+	    try {
+	           socketID = (PipeID) IDFactory.fromURI(new URI(SOCKETIDSTR));
+	        } catch (URISyntaxException use) {
+	          use.printStackTrace();
+	        }
+	    pipeAdv.setPipeID(socketID);
+		
+		//pipeAdv.setPipeID(id); 
+		//End Ling Edit
+		
 		// the name really does not matter here, only for illustration
 		pipeAdv.setName("test");
 		pipeAdv.setType(PipeService.UnicastType);
 		return pipeAdv;
 
+		
 		/*
 		 * PipeID socketID = null;
 		 * 
