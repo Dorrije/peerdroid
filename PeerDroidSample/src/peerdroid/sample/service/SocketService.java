@@ -230,11 +230,10 @@ public class SocketService {
 		//PipeID id = (PipeID) IDFactory.newPipeID(netPeerGroup.getPeerGroupID(),
 			//	preCookedPID);
 		PipeID id = (PipeID) IDFactory.newPipeID(netPeerGroup.getPeerGroupID());
-		PipeAdvertisement pipeAdv = (PipeAdvertisement) AdvertisementFactory
-				.newAdvertisement(PipeAdvertisement.getAdvertisementType());
+		PipeAdvertisement pipeAdv = (PipeAdvertisement) AdvertisementFactory.newAdvertisement(PipeAdvertisement.getAdvertisementType());
 		
 		//Start Ling Edit
-		
+		/*
 		PipeID socketID = null;
 	    try {
 	           socketID = (PipeID) IDFactory.fromURI(new URI(SOCKETIDSTR));
@@ -242,9 +241,9 @@ public class SocketService {
 	          use.printStackTrace();
 	        }
 	    pipeAdv.setPipeID(socketID);
-		
-		//pipeAdv.setPipeID(id); 
+		*/ 
 		//End Ling Edit
+		pipeAdv.setPipeID(id);
 		
 		// the name really does not matter here, only for illustration
 		pipeAdv.setName("test");
