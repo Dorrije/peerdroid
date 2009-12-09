@@ -89,7 +89,7 @@ public class PeerDroidSample extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.p2pmain);
         
         /*Finds View elements by Id*/
         messagesTextView = (TextView) findViewById(R.id.messagesTextView);
@@ -97,6 +97,12 @@ public class PeerDroidSample extends Activity {
         messageEditText = (EditText)findViewById(R.id.messageEditText);
         sendButton.setOnClickListener(sendButton_OnCliclistener);
 
+        Button clearButton = (Button) findViewById(R.id.clear);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	messagesTextView.setText("");
+            } });
+        	
 
 		//New Objects for the Dialog Windows
 		infoDialog = new NetworkInfoDialog(this);
@@ -105,7 +111,7 @@ public class PeerDroidSample extends Activity {
 		
 		jxtaThread = new Thread() {
 			public void run() {
-					managerJXTA = new JXTAService("MacBook-Piko" ,"principal","password",getFileStreamPath("jxta"));
+					managerJXTA = new JXTAService("Ubuntu-Piko" ,"principal","password",getFileStreamPath("jxta"));
 					managerJXTA.peerList = peerList;
 					managerJXTA.startSearchingPeers();
 					 

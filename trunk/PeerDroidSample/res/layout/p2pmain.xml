@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<AbsoluteLayout android:id="@+id/AbsoluteLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"></AbsoluteLayout>
+<FrameLayout android:id="@+id/FrameLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"></FrameLayout>
+
+<AbsoluteLayout android:id="@+id/AbsoluteLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content"></AbsoluteLayout>
+<TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Write a Message:"></TextView>
+<EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/messageEditText"></EditText>
+<Button android:layout_height="wrap_content" android:text="Send" android:id="@+id/sendButton" android:layout_width="fill_parent" android:singleLine="true"></Button>
+
+    <peerdroid.sample.LogTextBox
+        android:id="@+id/messagesTextView"
+        android:background="@drawable/box"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="vertical"/>
+	<LinearLayout android:id="@+id/LinearLayout01" 
+	android:orientation="horizontal"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+	<Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"/>
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/log_text_box_1_do_nothing_text"/>-->
+	</LinearLayout>
+</LinearLayout>
+<!--TextView android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/messagesTextView" android:singleLine="false"></TextView-->

@@ -32,7 +32,7 @@ public class PeerDiscoveryHandler implements Runnable{
 		this.manager = manager;
 		this.peerName = peerName;
 		
-		Log.d(PeerDroidSample.TAG,"Nuovo Thread per la gestione della ricerca di un Peer !!");
+		Log.d(PeerDroidSample.TAG,"New Thread to manage peers research !!");
 	}
 	
     /**
@@ -43,12 +43,11 @@ public class PeerDiscoveryHandler implements Runnable{
 		//Starts peer discovery
 		try {
 	            
-				while ( true ) {
+				while ( !this.manager.isStopped() ) {
 	            
 					 // Add ourselves as a DiscoveryListener for DiscoveryResponse events
 					manager.getDiscovery().addDiscoveryListener(manager);
 					
-	            	System.out.println( TAG + "Sending ADV discovery message for ADV connected to RDV ");
 	            	manager.getDiscovery().getRemoteAdvertisements(null, DiscoveryService.ADV,null, null, 200,null);
 	            	
 	            	//looks for socket peer
@@ -66,6 +65,8 @@ public class PeerDiscoveryHandler implements Runnable{
 	                } catch(Exception e) {}
 					
 	            } //end while
+				
+				Log.d(PeerDroidSample.TAG,"Closing PeerDiscoveryHandler ...");
 	            
 	        } catch(Exception e) {
 	            e.printStackTrace();

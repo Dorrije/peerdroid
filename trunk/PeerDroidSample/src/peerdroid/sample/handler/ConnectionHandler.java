@@ -7,6 +7,7 @@ import java.net.Socket;
 
 import peerdroid.sample.PeerDroidSample;
 import peerdroid.sample.service.JXTAService;
+import peerdroid.sample.tools.Utility;
 
 import android.util.Log;
 
@@ -73,11 +74,23 @@ public class ConnectionHandler implements Runnable {
                 
                 Log.d(PeerDroidSample.TAG,TAG + "MESSAGE READ : " + new String(buf) + " Size : " + read);
                 final String message = new String(buf);
+                
+                PeerDroidSample.handler.post(new Runnable() {
+                    public void run() {
+                   	 PeerDroidSample.messagesTextView.setText
+                    	(PeerDroidSample.messagesTextView.getText()+"\n"+ 
+                    			Utility.getCurrentTime() +
+                    			"Message Received: " + message + "\n");
+                    	}
+                	});
+                
+                /*
                 PeerDroidSample.handler.post(new Runnable() {
                     public void run() {
                     	PeerDroidSample.messagesTextView.setText(PeerDroidSample.messagesTextView.getText()+"\n"+message);
                     }
                 });
+                */
                 
             	}
             	
