@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, PeerDroidSample!</string>
     <string name="app_name">PeerDroidSample</string>
+    <string name="clear">Clear</string>
 </resources>

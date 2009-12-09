@@ -327,21 +327,47 @@ public class JXTAService implements DiscoveryListener {
 				
 				 if ( adv1 instanceof ModuleSpecAdvertisement) {
 			            ModuleSpecAdvertisement app = (ModuleSpecAdvertisement)adv1;
-			            Log.d(PeerDroidSample.TAG,"Found MSA Peer Advertisement ----> " + "PeerADV Name:" + app.getName() + " ----> SocketADV ID: " + app.getPipeAdvertisement().getID());
 			      
 			            try
 			            {
 			            	Long longvalue = Long.parseLong(app.getDescription());     
-			            	Peer newPeer = new Peer(app.getName(),app.getPipeAdvertisement(),longvalue.longValue());
+			            	synchronized(peerList) {
+			            		//change the list only when the new peer is not the current peer itself
+				            	if (!app.getName().equals(this.instanceName)) {
+				            		Peer newPeer = 
+					            		new Peer(app.getName(),app.getPipeAdvertisement(),longvalue.longValue());
+				            		int index = -1;
+					            	if (peerList.contains(newPeer)) { //the peer is already in the list
+					            		index = peerList.indexOf(newPeer);
+					            		
+					            		Peer peer = peerList.get(index);
+					            		if ((peer.getLastUpdate() < newPeer.getLastUpdate())
+					            				//&& (newPeer.isNewer(Constants.lastPingTimestamp))
+					            				){
+					            			peerList.remove(index);
+					            			peerList.add(newPeer);
+					            		}
+					            	} else { //list doesnot contain the peer
+					            		peerList.add(newPeer);
+					            	}
+				            	}
+			            	}
+			            	
+			            	/*
+			            	Peer newPeer = new Peer(app.getName(),app.getPipeAdvertisement()
+			            			,longvalue.longValue());
 			              	int index = this.peerList.indexOf(newPeer);
 			            	
-			            	if(index != -1 && peerList.get(index).getLastUpdate() < newPeer.getLastUpdate() && !newPeer.getName().equals(this.instanceName))
+			            	if(index != -1 
+			            			&& peerList.get(index).getLastUpdate() < newPeer.getLastUpdate() 
+			            			&& !newPeer.getName().equals(this.instanceName))
 			            	{
 			            		this.peerList.remove(newPeer);
 			            		this.peerList.add(newPeer);	
 			            	}
 			            	else if(!newPeer.getName().equals(this.instanceName))
-			            		this.peerList.add(newPeer);	
+			            		this.peerList.add(newPeer);
+			            		*/	
 			            }
 			            catch(NumberFormatException e)
 			            {
@@ -349,6 +375,12 @@ public class JXTAService implements DiscoveryListener {
 				 }
 			}
 		}
+		
+		for(int i=0; i < peerList.size(); i++)
+			 Log.d(PeerDroidSample.TAG,"Found MSA Peer Advertisement ----> " 
+	            		+ "PeerADV Name:" + peerList.get(i).getName() + " ----> SocketADV ID: " 
+	            		+ peerList.get(i).getPipeAdvertisement().getID());
+		
 		Log.d(PeerDroidSample.TAG, "###############################################################################################");
 	}
 
