@@ -36,7 +36,7 @@ import net.jxta.protocol.PeerAdvertisement;
 import net.jxta.rendezvous.RendezVousService;
 
 /**
- * A simple and re-usabel example for creating and joining a JXTA peergroup
+ * A simple and re-usable example for creating and joining a JXTA peergroup
  * 
  * @author Michele Amoretti (ardarico) Marco Picone
  * @created may 18, 2007
@@ -52,8 +52,9 @@ public class JXTAService implements DiscoveryListener {
 	private final static File home = new File(System.getProperty("JXTA_HOME",
 			"cache"));
 
-	private static String rdvlist = "http://www.ce.unipr.it/~picone/rdvlist.txt";
-
+	//private static String rdvlist = "http://www.ce.unipr.it/~picone/rdvlist.txt";
+	private static String rdvlist = "http://dsg.ce.unipr.it/research/SP2A/rdvlist.txt";
+	
 	private String socketPeerName;
 	private PeerID socketPeerID;
 	private PeerID rdvId;
@@ -244,38 +245,46 @@ public class JXTAService implements DiscoveryListener {
 
 		if (en != null) {
 			while (en.hasMoreElements()) {
-				
 				adv1 = (Advertisement) en.nextElement();
-				
 				 if ( adv1 instanceof ModuleSpecAdvertisement) {
-					 
+
 			            ModuleSpecAdvertisement app = (ModuleSpecAdvertisement)adv1;
 			            System.out.println("Found MSA Peer Advertisement ----> " + "PeerADV Name:" + app.getName() + " ----> SocketADV ID: " + app.getPipeAdvertisement().getID());
-			            
+			     
 			            try
 			            {
 			            	Long longvalue = Long.parseLong(app.getDescription());     
-			            	Peer newPeer = new Peer(app.getName(),app.getPipeAdvertisement(),longvalue.longValue());
-			              	int index = this.peerList.indexOf(newPeer);
-			            	
-			            	if(index != -1)
-			            	{
-			            		if(peerList.get(index).getLastUpdate() < newPeer.getLastUpdate() && !newPeer.getName().equals(this.instanceName))
-			            		{
-			            			this.peerList.remove(newPeer);
-			            			this.peerList.add(newPeer);	
-			            		}
-			   		        }
-			            	else if(!newPeer.getName().equals(this.instanceName))
-			            		this.peerList.add(newPeer);	
+
+			            	synchronized(peerList) {
+
+			            		//change the list only when the new peer is not the current peer itself
+				            	if (!app.getName().equals(this.instanceName)) {
+				            		Peer newPeer = 
+					            		new Peer(app.getName(),app.getPipeAdvertisement(),longvalue.longValue());
+				            		int index = -1;
+					            	if (peerList.contains(newPeer)) { //the peer is already in the list
+					            		index = peerList.indexOf(newPeer);
+					            	
+					            		Peer peer = peerList.get(index);
+					            		if ((peer.getLastUpdate() < newPeer.getLastUpdate())
+					            				//&& (newPeer.isNewer(Constants.lastPingTimestamp))
+					            				){
+					            			peerList.remove(index);
+					            			peerList.add(newPeer);
+					            		}
+					            	} else { //list doesnot contain the peer
+					            		peerList.add(newPeer);
+					            	}
+				            	}
+			            	}
 			            }
 			            catch(NumberFormatException e)
 			            {
 			            }
-					 }
-					    
 				 }
 			}
+		}
+		
 		System.out.println("PEER LIST COUNT = " + peerList.size());
 		System.out.println("###############################################################################################");
 	}
